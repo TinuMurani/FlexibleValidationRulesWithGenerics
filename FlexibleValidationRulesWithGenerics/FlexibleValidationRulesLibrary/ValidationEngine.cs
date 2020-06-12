@@ -6,11 +6,11 @@ namespace FlexibleValidationRulesLibrary
 {
     public class ValidationEngine
     {
-        public ValidationEngine(IValidationRule<object>[] rules)
+        public ValidationEngine(List<ValidationRule> rules)
         {
             this.Rules = rules;
         }
-        public IValidationRule<object>[] Rules { get; }
+        public List<ValidationRule> Rules { get; }
 
         public ValidityResponse IsValid(object data)
         {

@@ -6,11 +6,16 @@ namespace FlexibleValidationRulesLibrary
 {
     public class Person
     {
+        public Person()
+        {
+
+        }
+
         public Person(string firstName, string lastName, string cnp, DateTime dateOfBirth)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.CNP = CNP;
+            this.CNP = cnp;
             this.DateOfBirth = dateOfBirth;
         }
 

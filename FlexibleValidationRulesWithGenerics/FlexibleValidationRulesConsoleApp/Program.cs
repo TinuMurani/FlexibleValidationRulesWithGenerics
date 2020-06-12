@@ -8,33 +8,19 @@ namespace FlexibleValidationRulesConsoleApp
     {
         static void Main(string[] args)
         {
-            ValidationEngine validationEngine = new ValidationEngine(new IValidationRule<object>[]
+            ValidationEngine validationEngine = new ValidationEngine(new List<ValidationRule>()
             {
-                
+                new PersonValidationRule()
             });
             
-            
-            
+            PersonListProcessor processor = new PersonListProcessor(validationEngine);
 
-            //PersonListProcessor processor = new PersonListProcessor(validationEngine);
-
-            //processor.Process(new List<Person>
-            //{
-            //    new Person
-            //    {
-            //        FirstName = "John",
-            //        LastName = "Doe",
-            //        CNP = "123433443",
-            //        DateOfBirth = new DateTime(1980, 1, 20)
-            //    },
-            //    new Person
-            //    {
-            //        FirstName = "Johnny",
-            //        LastName = "Deep",
-            //        CNP = "",
-            //        DateOfBirth = new DateTime(1976, 5, 20)
-            //    }
-            //});
+            processor.Process(new List<Person>
+            {
+                new Person ("Tinu", "Murani", "23153546", new DateTime(1984, 08, 03)),
+                new Person ("Leontin", "", "23153546", new DateTime(1995, 11, 05)),
+                null
+            });
 
             Console.ReadLine();
         }
