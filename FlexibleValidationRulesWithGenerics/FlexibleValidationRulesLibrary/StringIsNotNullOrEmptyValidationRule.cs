@@ -8,9 +8,9 @@ namespace FlexibleValidationRulesLibrary
     {
         public ValidityResponse IsValid(string inputData)
         {
-            if (inputData is null)
+            if (string.IsNullOrEmpty(inputData))
             {
-                return new ValidityResponse(false, "Input string is null");
+                return new ValidityResponse(false, $"Input string for <{nameof(inputData)}> is null or empty");
             }
 
             return new ValidityResponse(true, "");

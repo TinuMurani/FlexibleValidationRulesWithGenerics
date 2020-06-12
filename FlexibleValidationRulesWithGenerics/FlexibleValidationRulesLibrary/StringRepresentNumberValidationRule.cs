@@ -10,14 +10,14 @@ namespace FlexibleValidationRulesLibrary
         {
             if (string.IsNullOrEmpty(inputData))
             {
-                return new ValidityResponse(false, "Input string is null");
+                return new ValidityResponse(false, $"Input string for <{nameof(inputData)}> is null or empty");
             }
 
             foreach (Char c in inputData.ToCharArray())
             {
                 if (!char.IsDigit(c))
                 {
-                    return new ValidityResponse(false, "At least one character is not a number");
+                    return new ValidityResponse(false, $"At least one character in <{nameof(inputData)}> is not a number");
                 }
             }
 

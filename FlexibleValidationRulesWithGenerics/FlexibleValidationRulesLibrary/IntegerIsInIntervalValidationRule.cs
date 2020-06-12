@@ -19,7 +19,7 @@ namespace FlexibleValidationRulesLibrary
         {
             if (!(this.From <= inputData && inputData <= this.To))
             {
-                return new ValidityResponse(false, "Number is not within the specified interval");
+                return new ValidityResponse(false, $"Number represented by <{nameof(inputData)}> is not within the specified interval");
             }
 
             return new ValidityResponse(true, "");

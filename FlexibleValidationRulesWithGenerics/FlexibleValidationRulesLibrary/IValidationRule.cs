@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FlexibleValidationRulesLibrary
+﻿namespace FlexibleValidationRulesLibrary
 {
     public interface IValidationRule<T>
     {
